@@ -1,0 +1,33 @@
+{
+    "category": {
+        "title": "Science and Computers",
+        "questions": [
+            {                
+                "question": "What does the acronym CDN stand for in terms of networking?",
+                "type": "multiple",
+                "correct_answer": "Content Delivery Network",
+                "incorrect_answers": [
+                    "Content Distribution Network",
+                    "Computational Data Network",
+                    "Compressed Data Network"
+                ]
+            },
+            {
+                "question": "Which of these stars is the largest?",
+                "type": "multiple",
+                "correct_answer": "UY Scuti",
+                "incorrect_answers": [
+                    "VY Canis Majoris",
+                    "Betelgeuse",
+                    "RW Cephei"
+                ]
+            },
+            {
+                "question": "The chemical element Lithium is named after the country of Lithuania.",
+                "type": "boolean",
+                "correct_answer": false,
+                "incorrect_answers": true
+            }
+        ]
+    }
+}

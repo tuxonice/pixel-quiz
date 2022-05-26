@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pixel Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" id="app">
+        <div class="page-header">
+            <h2>{{ currentCategory }}</h2>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ currentQuestion }}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                      {{ currentOption1 }}
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      {{ currentOption2 }}
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                      {{ currentOption3 }}
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+                      {{ currentOption4 }}
+                    </label>
+                  </div>
+                  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-default">Previous</button>
+                <button type="button" class="btn btn-primary">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const quizData = {
+        "category": {
+            "title": "Science and Computers",
+            "questions": [
+                {                
+                    "question": "What does the acronym CDN stand for in terms of networking?",
+                    "type": "multiple",
+                    "correct_answer": "Content Delivery Network",
+                    "incorrect_answers": [
+                        "Content Distribution Network",
+                        "Computational Data Network",
+                        "Compressed Data Network"
+                    ]
+                },
+                {
+                    "question": "Which of these stars is the largest?",
+                    "type": "multiple",
+                    "correct_answer": "UY Scuti",
+                    "incorrect_answers": [
+                        "VY Canis Majoris",
+                        "Betelgeuse",
+                        "RW Cephei"
+                    ]
+                },
+                {
+                    "question": "The chemical element Lithium is named after the country of Lithuania.",
+                    "type": "boolean",
+                    "correct_answer": false,
+                    "incorrect_answers": true
+                }
+            ]
+        }
+    }   
+    </script>
+    <script>
+      const QuizApp = {
+        data() {
+          return {
+            quizData: quizData,
+            currentCategory: null,
+            currentQuestion: null,
+            currentOption1: null,
+            currentOption2: null,
+            currentOption3: null,
+            currentOption4: null,
+          }
+        },
+        
+        mounted() {
+          this.currentQuestion = this.quizData.category.questions[0].question;
+          this.currentCategory = this.quizData.category.title;
+          this.currentOption1 = this.quizData.category.questions[0].correct_answer;
+          this.currentOption2 = this.quizData.category.questions[0].incorrect_answers[0];
+          this.currentOption3 = this.quizData.category.questions[0].incorrect_answers[1];
+          this.currentOption4 = this.quizData.category.questions[0].incorrect_answers[2];
+        }
+      }
+      
+      Vue.createApp(QuizApp).mount('#app')
+    </script>
+  </body>
+</html>
