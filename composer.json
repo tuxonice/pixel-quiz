@@ -1,0 +1,11 @@
+{
+    "name": "tuxonice/pixel-quiz",
+    "autoload": {
+        "psr-4": {
+            "Quiz\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    }
+}
