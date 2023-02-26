@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {
+      "title": "Geography",
+      "questions": [
+        {
+          "title": "What is the only country in the world with a flag that doesn't have four right angles?",
+          "type": "single",
+          "correct_answers": [
+            "Nepal"
+          ],
+          "incorrect_answers": [
+            "Panama",
+            "Angola",
+            "Spain"
+          ]
+        },
+        {
+          "title": "The Principality of Sealand is an unrecognized micronation off the coast of what country?",
+          "type": "single",
+          "correct_answers": [
+            "The United Kingdom"
+          ],
+          "incorrect_answers": [
+            "Japan",
+            "Austrailia",
+            "Argentina"
+          ]
+        },
+        {
+          "title": "The flag of South Africa features 7 colours.",
+          "type": "single",
+          "correct_answers": [
+            "False"
+          ],
+          "incorrect_answers": [
+            "True"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Animals",
+      "questions": [
+        {
+          "title": "A carnivorous animal eats flesh, what does a nucivorous animal eat?",
+          "type": "single",
+          "correct_answers": [
+            "Nuts"
+          ],
+          "incorrect_answers": [
+            "Nothing",
+            "Fruit",
+            "Seaweed"
+          ]
+        },
+        {
+          "title": "In 2016, the IUCN reclassified the status of Giant Pandas from endangered to vulnerable.",
+          "type": "single",
+          "correct_answers": [
+            "True"
+          ],
+          "incorrect_answers": [
+            "False"
+          ]
+        }
+      ]
+    }
+  ]
+}
