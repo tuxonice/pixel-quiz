@@ -46,6 +46,9 @@
                         <div class="alert" role="alert" style="display: none">
 
                         </div>
+                        <?php if ($question->getHint()) { ?>
+                            <div><b>Hint:</b> <a href="<?php echo($question->getHint()); ?>"><?php echo($question->getHint()); ?></a></div>
+                        <?php } ?>
                     </div>
                     <?php } ?>
                 </div>

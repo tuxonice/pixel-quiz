@@ -6,6 +6,7 @@ use Quiz\Models\Answer;
 use Quiz\Models\Category;
 use Quiz\Models\Quiz;
 use Quiz\Models\Question;
+use Symfony\Component\Dotenv\Dotenv;
 
 class Boot 
 {
@@ -16,6 +17,9 @@ class Boot
 
     public function init()
     {
+        $dotenv = new Dotenv();
+        $dotenv->load(dirname(__DIR__).'/.env');
+
         $this->quiz = $this->readData();
 
         $currentCategoryId = $_POST['category-id'] ?? 1;
@@ -49,7 +53,7 @@ class Boot
 
     private function readData()
     {
-        $jsonFile = file_get_contents(dirname(__DIR__) . '/data/data.json');
+        $jsonFile = file_get_contents(dirname(__DIR__) . '/data/' . $_ENV['DATA_FILENAME']);
 
         $data = json_decode($jsonFile, true);
 

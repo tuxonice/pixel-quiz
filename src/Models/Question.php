@@ -10,6 +10,8 @@ class Question
 
     private string $type;
 
+    private string $hint;
+
     private array $answers = [];
 
     public static function createFromArray(array $data): self
@@ -18,6 +20,7 @@ class Question
         $question->id = $data['id'];
         $question->title = $data['title'];
         $question->type = $data['type'];
+        $question->hint = $data['hint'] ?? '';
 
         return $question;
     }
@@ -50,5 +53,10 @@ class Question
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getHint(): string
+    {
+        return $this->hint;
     }
 }
